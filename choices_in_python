@@ -1,0 +1,88 @@
+
+django models.py
+
+CONTRIBUTE_CHOICE = (
+    ('Books', 'Books'),
+    ('Renovation', 'Renovation'),
+    ('Other', 'Other'),
+    )
+
+class Contribute(models.Model):
+    firstName = models.CharField(max_length=50)
+    lastName = models.CharField(max_length=50)
+    email = models.EmailField(max_length=100)
+    contribution = models.CharField(max_length=100, choices=CONTRIBUTE_CHOICE)
+
+    def publish(self):
+        self.save()
+
+    def __str__(self):
+        return self.firstName
+
+
+
+
+django forms.py
+
+from .models import Contribute
+
+CONTRIBUTE_CHOICE = (
+    ('Books', 'Books'),
+    ('Renovation', 'Renovation'),
+    ('Other', 'Other'),
+    )
+
+class ContributeForm(forms.ModelForm):
+
+    contribution = forms.ChoiceField(choices=CONTRIBUTE_CHOICE, required=True )
+
+    class Meta:
+        model = Contribute
+
+        widgets = {
+            'firstName': forms.TextInput(attrs={'placeholder': 'First Name'}),
+            'lastName': forms.TextInput(attrs={'placeholder': 'Last Name'}),
+            'email': forms.TextInput(attrs={'placeholder': 'Email'}),
+        }
+        fields = ('firstName', 'lastName', 'email', 'contribution')
+
+
+
+
+django views.py
+
+from .forms import ContributeForm
+
+def donate(request):
+    if request.method == "POST":
+        contributeForm = ContributeForm(request.POST)
+
+        if contributeForm.is_valid():
+            post = contributeForm.save(commit=False)
+            post.save()
+            return redirect('home')
+
+    else:
+        contributeForm = ContributeForm()
+        context = {'contributeForm': contributeForm}
+        return render(request, 'donate.html', context)
+
+
+
+
+<form class='contribution_form' method="post">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col">
+            {{ contributeForm.firstName|as_crispy_field }}
+        </div>
+        <div class="col">
+            {{ contributeForm.lastName|as_crispy_field }}
+        </div>
+    </div>
+    {{ contributeForm.email|as_crispy_field }}
+    {{ contributeForm.contribution|as_crispy_field }}
+    <button type="submit" class="btn btn-lg">Submit</button>
+</form>
+
+

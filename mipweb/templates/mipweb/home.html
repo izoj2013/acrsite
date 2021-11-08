@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block meta_description %}LDN Discoveries on [NP≠P] {% endblock %}
+{% block title %} ACS-ERC: Research Breakthrough on [NP≠P] {% endblock %}
+{% block content %}
+    <div class="container-fluid text-white text-center mt-5 pt-3 border border-4 border-info">
+        <p>Katex tit-bits
+            $$ \iint f(x, y)dxdy $$
+            $$ v \ne z $$
+        </p>
+
+        <div class="row tsp-title fw-bold text-center pt-4 border border-2 border-warning rouded-pill">
+            <h2>
+                TSP[NP=P] LDN Individual Research Initiative 1988-2021
+            </h2>
+            <br/>
+            <p>
+                Lusaka, Zambia
+            </p>
+        </div>
+    
+        <div class="row slns-title fw-bold text-center pt-4 border border-2 border-warning">
+            <p>
+                Groupoid Submodular Network Algebra<br/>
+                Travelling Salesman Problem Solvability States:<br/>
+                Impossible [NP\(\boldsymbol{\neq}\)P] 1D Solid-Nodeset-Graph and<br/>
+                Approxiamte [NP\(\boldsymbol{\approx}\)P] 2D Split-Node-Cover Matrix and<br/>
+                Solvable[NP=P] 3D Split-Node-Cover Molecular-Weight Periodic-Table<br/>
+            </p>
+        </div>
+    
+        <div class="row ldn-brief-bio fw-bold text-center pt-4 border border-2 border-warning">
+            <p>
+                Lemba D. Nyirenda Ph.D. (UC Irvine, CA, USA)<br/>
+                Fellow Engineering Institute of Zambia, Registered Engineer Zambia Engineers Registration Board<br/>
+                Senio Life Member Institute of Electrical & Electronic Engineers (USA), Life Member Alumni UC Irvine (USA)<br/>
+                Member Institute of ORMS-A (Operational Research & Management Science & Analytics, USA)<br/>
+                University of Zambia Senior Lecturer Power Systems, Smart Grids Protection, Operation & Control,<br/>
+                New Jerusalem University Professor Smart Lifelines Systems Disaster Protection & AI TSP ORMS-A<brr/>
+                Zambia IEC National Committee Representative Africa Electrotechnical Standards Commission(AFSEC) Conformity Assessment Committee<br/>
+                Email: lembanyirenda@gmail.com<br/><br/>
+            </p>
+        </div>
+
+        <div class="row nju-link fw-bold text-center pt-4 border border-2 border-warning">
+            <p>
+                New Jerusalem Univeriity<br/>
+                Smart Lifelines Systems, Advanced Technology Park<br/>
+                KAMAILA-AREA, CHISAMBA, ZAMBIA<br/>
+                P.O. Box 320384 Woodlands, Lusaka, Zambia<br/><br/>
+            </p>
+        </div>
+
+        <div class="row trust-fund fw-bold text-center pt-4">
+            <div class="trust-fund">
+                TSP[NP=P] 35 years Individual Research Appreciation NJU-Building Trust Fund<br/><br/>
+                <p>If you would like to donate to our Trust Fund:</p>
+                <button class="btn btn-outline-secondary contact-link"><a href="{% url 'mip-donation' %}">Please, pledge here</a></button>
+            </div>
+        </div>
+    </div>
+{% endblock %}

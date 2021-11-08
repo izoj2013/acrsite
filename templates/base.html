@@ -1,0 +1,101 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="{% block meta_description %} ACS-ERC: &amp; LDN Individual Research Initiative 1988-2021 {% endblock %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Katex -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900'>
+    <link rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css2?family=Courgette&family=Roboto+Slab:wght@300&display=swap'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calligraffitti&family=Kufam&family=Parisienne&display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css">
+
+    <!-- bootstrap -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- <link
+        rel="stylesheet"
+        type="text/css"
+        href="{% static 'mipweb/css/bootstrap.min.css' %}"> -->
+
+    <!-- local css file -->
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="{% static 'mipweb/css/mipweb.css' %}"
+    >
+    <title>{% block title %} ACS-ERC {% endblock %}</title>
+</head>
+<body>
+    {% include 'includes/navbar.html' %}
+    <div class="container main-content">
+
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer class="container p-5 bg-dark text-white mt-4 mb-0">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 my-links">
+                <h3 class="heading-3 fw-bold">Quick Links:</h3>
+                <ul class="list-items">
+                    <li class="bottom-links"><a href="{% url 'mip-home' %}">Home</a></li>
+                    <li class="bottom-links"><a href="{% url 'mip-home' %}">About Us</a></li>
+                    <li class="bottom-links"><a href="#">Research</a></li>
+                    <li class="bottom-links"><a href="{% url 'mip-team' %}">Our Team</a></li>
+                    <li class="bottom-links"><a href="{% url 'mip-partner' %}">Partner With Us</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 my-services">
+                <h3 class="heading-3 fw-bold">Our Services:</h3>
+                <ul class="list-items">
+                    <li class="bottom-links"><a href="#">Optimized Solutions to Complex Problems </a></li>
+                    <li class="bottom-links"><a href="#">LifeLinesNets - Emergency States</a></li>
+                    <li class="bottom-links"><a href="#">LifeLinesNets - Topological Reliability</a></li>
+                    <li class="bottom-links"><a href="#">Integrated LifeLines Infrastructure Emergency - Disaster Protection</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 my-address">
+                <div class="acr-address">
+                    <h3 class="heading-3 fw-bold">Address:</h3>
+                    <p class="nju-address fw-bold">New Jerusalem University<br/>
+                        Smart Lifelines Systems  Advanced Technology Park,<br/>
+                        KAMAILA-AREA, CHISAMBA, Central Province<br/>
+                        P. O. Box 320384 Woodlands,</br>
+                        Lusaka, Zambia.
+                    </p>
+
+                    <!-- <p><i class="fa fa-envelope" aria-hidden="true"></i>: info@makingimpossiblepossible.com</p> -->
+                    <p class="mip-contact"><i class="fa fa-phone" aria-hidden="true"></i> : +260 211 290979</p>
+                    <p class="mip-contact"><i class="fa fa-envelope" aria-hidden="true"></i> : <a href="mailto:info@makingimpossiblepossible.com">E-mail us</a></p>
+                    <p class="mip-contact"><i class="fa fa-facebook-square" aria-hidden="true"></i> : <a href="https://facebook.com/julien.maganga.71">Like Us On Facebook</a></p>
+                    <p class="mip-contact"><i class="fa fa-linkedin-square" aria-hidden="true"></i> : <a href="https://www.linkedin.com/in/lemba-d-nyirenda-dr-19353211">Connect With Us on LinkedIn</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="row copyrights text-white text-center mt-2 pt-2">
+            <h4 class="company pt-2">&copy; 2021 - 2024, AFRICAN COMPUTER SCIENCE AND ENGINEERING RENAISSANCE CHALLENGE</h4>
+            <h6 class="developer">Developed and Maintained by Ingenuity CyberTech.</h4>
+        </div>
+    </footer>
+    <!-- script files -->
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- <script type="text/javascript"  src="{% static bootstrap.bundle.min.js %}"></script> -->
+</body>
+</html>
