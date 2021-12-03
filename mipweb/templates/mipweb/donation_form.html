@@ -10,6 +10,11 @@
     <div class="row">
         <h2 class="title">Donate to our Research Trust</h2>
         <hr class="mt-0 mb-4">
-        {% crispy form %}
+        <form method="post" class="frm-donor">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit" class="btn btn-primary">Submit Your Pledge</button>
+            <button type="button" class="btn btn-danger mi-4">Cancel</button>
+        </form>
     </div>
 {% endblock %}

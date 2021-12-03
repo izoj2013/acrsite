@@ -6,6 +6,26 @@ from django.db.models.deletion import CASCADE
 from django.db.models.fields import EmailField
 from .utils import full_name
 
+@unique
+class PartnershipType(StrEnum):
+    DEMO_REQUEST = 'Request for Demo'                 #PartnershipType.DEMO_REQUEST.label = 'Demo Request'
+    DONATE_TO_PROJECT = 'Donate to Project'
+    HIRE_SERVICE = 'Hire our Services'
+    RESEARCH_COLLABO = 'Collaborate with us'
+
+@unique
+class ExpertiseType(StrEnum):
+    CENTRE_EXCELLENCY = 'Centre of Excellency'
+    CONSULTANCY = 'Concultancy'
+    INVENTION = 'Invention'
+    RESEARCH = 'Research'
+    TRAINING = 'Training'
+
+@unique
+class ExpertStrength(Enum):
+    INDIVIDUAL = auto()
+    GROUP = auto()
+
 
 class TeamMember(models.Model):
     first_name = models.CharField(max_length=128)
@@ -18,26 +38,12 @@ class TeamMember(models.Model):
     def full_name(self):
         "Returns the Team Member's full name."
         return full_name(self.first_name, self.last_name, self.middle_name)
-    
+
     def __str__(self) -> str:
         return self.full_name(self)
 
 
 class Expertise(models.Model):
-
-    @unique
-    class ExpertiseType(StrEnum):
-        CENTRE_EXCELLENCY = 'Centre of Excellency'
-        CONSULTANCY = 'Concultancy'
-        INVENTION = 'Invention'
-        RESEARCH = 'Research'
-        TRAINING = 'Training'
-
-    @unique
-    class ExpertStrength(Enum):
-        INDIVIDUAL = auto()
-        GROUP = auto()
-
     name = models.CharField(max_length=128)
     expertise_type = ExpertiseType.INVENTION
     expertise_strength = ExpertStrength.GROUP
@@ -73,19 +79,35 @@ class ContactPerson(models.Model):
 
 class Partnership(models.Model):
 
-    @unique
-    class PartnershipType(StrEnum):
-        DEMO_REQUEST = 'Request for Demo'                 #PartnershipType.DEMO_REQUEST.label = 'Demo Request'
-        DONATE_TO_PROJECT = 'Donate to Project'
-        HIRE_SERVICE = 'Hire our Services'
-        RESEARCH_COLLABO = 'Collaborate with us'
+    def __init__(self, partnership: PartnershipType, expertise: ExpertiseType):
+        self.parternship = partnership
+        self.expertise = expertise
+
+    @property
+    def partnership(self):
+        return self._partnership
+
+    @property
+    def expertise(self):
+        return self._expertise
+
+    @partnership.setter
+    def partnership(self, partnership: PartnershipType):
+        if partnership not in PartnershipType:
+            raise Exception
+        self._partnership = partnership
+
+    @expertise.setter
+    def expertise(self, expertise: ExpertiseType):
+        if expertise not in ExpertiseType:
+            raise Exception
+        self._expertise = expertise
 
     name = models.CharField(max_length=128)
-    description = PartnershipType.DEMO_REQUEST
     partnership_domain = models.ManyToManyField(PartnershipArea)
 
     def __str__(self) -> str:
-        return self.name + " - " + self.description
+        return self.name + " - " + self.partnership.value + " - " + self.expertise.value
 
 
 class Partner(models.Model):
@@ -110,8 +132,8 @@ class Donor(models.Model):
     @property
     def full_name(self):
         "Returns the contact person's full name."
-        return full_name(self.contact_person_first_name, 
-                         self.contact_person_last_name, 
+        return full_name(self.contact_person_first_name,
+                         self.contact_person_last_name,
                          self.contact_person_middle_name)
 
     def __str__(self) -> str:
