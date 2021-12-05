@@ -164,7 +164,7 @@ a:hover, a:visited, a:link, a:active
 
 footer {
 	font-family: "Roboto", sans-serif;
-	background: #251616;
+	background: #535050; /*#251616;*/
 }
 
 .my-links {
@@ -276,3 +276,21 @@ footer {
 	border-radius: 6px;
 }
 /* End of CSS for the MIP-Partner */
+
+/* Start of CSS for Donor Form */
+.btn-register .btn-cancel {
+	display: block;
+	height: 30px;
+	width: 60px;
+	border-radius: 6px;
+	border: 1px solid gray;
+}
+
+.btn-cancel {
+	background-color: #ec1710;
+}
+
+.btn-register {
+	background-color: #1410ec;
+}
+/* End of CSS for Donor Form */

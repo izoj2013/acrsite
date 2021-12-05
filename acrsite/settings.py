@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_mysql',
     'mipweb',
+    'donor',
     'crispy_forms',
     'crispy_bootstrap5',
     'django_extensions',
