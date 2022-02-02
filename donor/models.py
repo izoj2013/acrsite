@@ -13,6 +13,7 @@ class Donor(models.Model):
     password1 = models.CharField(max_length=128)
     password2 = models.CharField(max_length=128)
     organisation = models.CharField(max_length=128)
+    registration_date = models.DateTimeField(auto_now=True)
 
     @property
     def full_name(self):
@@ -23,4 +24,4 @@ class Donor(models.Model):
         return self.full_name()
 
     def get_absolute_url(self):
-        return reverse('donor-detail', kwargs={'pk': self.pk})
+        return reverse('mip-donor-detail', kwargs={'pk': self.pk})

@@ -18,6 +18,10 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
+admin.site.site_header = 'ACS-ERC MIP Site Admin'
+admin.site.site_title = 'MIP Site Administration'
+admin.site.index_title = 'Making Impossible Possible Administration'
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),

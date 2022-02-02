@@ -294,3 +294,11 @@ footer {
 	background-color: #1410ec;
 }
 /* End of CSS for Donor Form */
+
+/* Start of CSS for Donor Details Form */
+.donor-details {
+	display: flex;
+	align-content: center;
+	width: 70%;
+}
+/* End of CSS for Donor Details Form */

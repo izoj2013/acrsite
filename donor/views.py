@@ -9,14 +9,13 @@ from . import models
 class DonorLoginView(View):
     form = DonorRegistrationForm
     fields = ['email', 'password1']
-    pass
 
 class DonorRegistrationView(SuccessMessageMixin, CreateView):
-    model = models.Donor
+    # model = models.Donor
+    # fields = '__all__'
     template_name = 'donor/donor_registration.html'
-    success_msg = 'Thank you for signing up as a Donor to Research Trust Fund! We will be in touch.'
-    #form = DonorRegistrationForm
-    fields = '__all__'
+    success_message = 'Thank you for signing up as a Donor to Research Trust Fund! We will be in touch.'
+    form_class = DonorRegistrationForm
 
 class DonorIndexView(ListView):
     context_object_name = 'donors'

@@ -63,7 +63,7 @@ class PartnershipArea(models.Model):
 
 class ContactPerson(models.Model):
     first_name = models.CharField(max_length=128)
-    middle_name = models.CharField(max_length=128)
+    middle_name = models.CharField(max_length=128, blank=True)
     last_name = models.CharField(max_length=128)
     email = EmailField()
     function_role = models.CharField(max_length=128)
@@ -112,7 +112,6 @@ class Partnership(models.Model):
 
 class Partner(models.Model):
     name = models.CharField(max_length=128)
-    email = models.EmailField()
     contact_person = models.ForeignKey(ContactPerson, on_delete=models.CASCADE)
     partnerships = models.ManyToManyField(Partnership)
 
