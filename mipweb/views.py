@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .donor_form import DonorForm
+from donor.forms.donor_registration_form import DonorRegistrationForm
 
 # Create your views here.
 
@@ -14,5 +14,5 @@ def partner(request):
     return render(request, 'mipweb/partnership.html')
 
 def donate(request):
-    form = DonorForm()
+    form = DonorRegistrationForm()
     return render(request, 'mipweb/donation_form.html', {'form': form})

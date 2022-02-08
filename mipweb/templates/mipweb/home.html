@@ -2,15 +2,15 @@
 
 {% load static %}
 {% block meta_description %}LDN Discoveries on [NP≠P] {% endblock %}
-{% block title %} ACS-ERC: Research Breakthrough on [NP≠P] {% endblock %}
+{% block title %} ACS-ERC, Making Impossible Possible: Research Breakthrough on [NP≠P] {% endblock %}
 {% block content %}
     <div class="container-fluid text-white text-center mt-5 pt-3 border border-4 border-info">
-        <p>Katex tit-bits
+        <!-- <p>Katex tit-bits
             $$ \iint f(x, y)dxdy $$
             $$ v \ne z $$
-        </p>
-
+        </p> -->
         <div class="row tsp-title fw-bold text-center pt-4 border border-2 border-warning rouded-pill">
+            <h1 class="research-txt p-2">Research Breakthrough</h1>
             <h2>
                 TSP[NP=P] LDN Individual Research Initiative 1988-2021
             </h2>
@@ -19,8 +19,24 @@
                 Lusaka, Zambia
             </p>
         </div>
+
+        <div class="row image-matrix">
+            <h1 class="graph-title p-4">TSP [NP=P] and TSP [NP≠P] 3D Matric Spaces</h1>
+            <img class="img-fluid image-matrix m-2" width="32" height="16" src="{% static 'mipweb/images/mip_home_matrix_caption.svg' %}" alt="Image-Matrix">
+        </div>
+
+        <!-- <div class="row tsp-title fw-bold text-center pt-4 border border-2 border-warning rouded-pill">
+            <h2>
+                TSP[NP=P] LDN Individual Research Initiative 1988-2021
+            </h2>
+            <br/>
+            <p>
+                Lusaka, Zambia
+            </p>
+        </div> -->
     
         <div class="row slns-title fw-bold text-center pt-4 border border-2 border-warning">
+            <h1 class="mip-slns p-2">Solving the Impossible</h1>
             <p>
                 Groupoid Submodular Network Algebra<br/>
                 Travelling Salesman Problem Solvability States:<br/>
@@ -31,6 +47,7 @@
         </div>
     
         <div class="row ldn-brief-bio fw-bold text-center pt-4 border border-2 border-warning">
+            <h1 class="lead-inventor p-2">The Lead Researcher and Inventor</h1>
             <p>
                 Lemba D. Nyirenda Ph.D. (UC Irvine, CA, USA)<br/>
                 Fellow Engineering Institute of Zambia, Registered Engineer Zambia Engineers Registration Board<br/>
@@ -44,19 +61,25 @@
         </div>
 
         <div class="row nju-link fw-bold text-center pt-4 border border-2 border-warning">
+            <h1 class="title-hq">HQ - CENTRE OF EXCELLENCE</h1>
+            <div class="col-lg-12 col-md-6 col-xs-12 loc-img pb-2 text-center">
+                <span class=location-icon><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i></span>
+            </div>
+            <div class="text-centre-hq pt-2">
             <p>
-                New Jerusalem Univeriity<br/>
+                New Jerusalem University<br/>
                 Smart Lifelines Systems, Advanced Technology Park<br/>
                 KAMAILA-AREA, CHISAMBA, ZAMBIA<br/>
                 P.O. Box 320384 Woodlands, Lusaka, Zambia<br/><br/>
             </p>
+            </div>
         </div>
 
         <div class="row trust-fund fw-bold text-center pt-4">
             <div class="trust-fund">
-                TSP[NP=P] 35 years Individual Research Appreciation NJU-Building Trust Fund<br/><br/>
+                TSP[NP=P] 30+ years Individual Research Appreciation NJU-Building Trust Fund<br/><br/>
                 <p>If you would like to donate to our Trust Fund:</p>
-                <button class="btn btn-warning contact-link"><a href="{% url 'mip-register' %}">Please, pledge here</a></button>
+                <button class="btn btn-warning contact-link"><a href="{% url 'mip-donor' %}">Please, pledge here</a></button>
             </div>
         </div>
     </div>
