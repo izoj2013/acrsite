@@ -1,0 +1,465 @@
+/* Core Styles */
+:root {
+	--primary-color: #047aed;
+	--secondary-color: #1c3fa8;
+	--dark-color: #002240;
+	--light-color: #f4f4f4;
+	--success-color: #5cb85c;
+	--error-color: #d9534f;
+}
+
+*,
+::before,
+::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	overflow-x: hidden;
+	background-image: url('../images/background_02.jpeg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background: rgba(#fafafa, #fdfdfd, #c7c7c7, 0.3);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	color: gold;
+}
+
+.logo-banner {
+	z-index: 1000;
+}
+
+ul {
+	list-style: none;
+}
+
+a:hover, a:visited, a:link, a:active
+{
+	text-decoration: none !important;
+}
+
+.nav-item {
+	padding-left: 1px;				/* Added 14.02.2022 */
+}
+
+.nav-item a {
+	color: #fffede;
+	font-size: 12px;
+	font-weight: bold;
+	overflow: hidden;
+	text-decoration: none;
+	text-overflow: ellipsis;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.nav-item a:hover {
+	backface-visibility: hidden;
+	border-bottom: 3px solid #ec1710;
+	filter: blur(0);
+	font-family: 'Roboto slab', serif;
+	font-size: 12px;					/* was 14px */
+	font-weight: bolder;
+	transition: all 0.3s ease-in, 0s;   /* was ease */
+}
+
+.nav-item a > i:hover {
+	color: #fafafa;
+}
+
+/* Start of sub-menus for partnership */
+.nav-list {
+	display: flex;
+	width: auto;
+	align-items: stretch;
+}
+
+.nav-list .fa {
+	margin-right: 2px;
+	color: white !important;
+}
+
+.nav-list > li {
+	line-height: 2rem;
+	position: relative;
+}
+
+.nav-list a {
+	filter: blur(0);
+	display: block;
+	/* color: #eee;
+	padding: 0 1.5rem;
+	font-size: 1.5rem;
+	font-weight: bold; */
+	text-transform: uppercase;
+	-webkit-transition: color 650ms;
+	-moz-transition: color 650ms;
+	-ms-transition: color 650ms;
+	-o-transition: color 650ms;
+	transition: color 650ms;
+}
+
+.nav-list a:hover {
+	color: #eb3007;
+	/* background-color: rgba(209, 205, 205, 0.849); */
+	border-radius: 2px;
+}
+
+.sub-menu li, .sub-menu2 li {
+	line-height: 3rem;     /* The height of the drop-down menu 2b animated */
+	/* word-wrap: break-word; //Added: 14.02.2022 */ 
+	/* max-width: 125px; */
+}
+
+.sub-menu {
+	display: block;
+	width: fit-content; /* 20rem;*/
+	position: absolute;
+	border-top: 2px solid #eb3007;
+	border-radius: 2px;
+	background-color: #191919;
+	z-index: 10;
+	top: 15rem;  /* How far the sub-menu box will start its animation from => FIXED 09.02.2022*/
+	opacity: 0.25;
+	visibility: hidden;
+	-webkit-transition: all 650ms ease;
+	-moz-transition: all 650ms ease;
+	-ms-transition: color 650ms;
+	-o-transition: all 650ms ease;
+	transition: all 650ms ease;
+}
+
+.sub-menu2 {
+	display: block;
+	width: fit-content; /* 20rem;*/
+	position: absolute;
+	border-top: 2px solid #eb3007;
+	border-radius: 2px;
+	background-color: #191919;
+	z-index: 10;
+	top: 12.25rem;  /* How far the sub-menu box will start its animation from => FIXED 09.02.2022*/
+	opacity: 0.25;
+	visibility: hidden;
+	-webkit-transition: all 650ms ease;
+	-moz-transition: all 650ms ease;
+	-ms-transition: color 650ms;
+	-o-transition: all 650ms ease;
+	transition: all 650ms ease;
+}
+
+.sub-menu::before {
+	content: "";
+	position: absolute;
+	top: -1.75rem; 		/* The height of the up-arrow will stop from the menu or sub-menu during anim */
+	left: 3rem;
+	border: 0.8rem solid transparent;
+	border-bottom-color: #eb3007;
+	transition: none;
+}
+
+.sub-menu2::before {
+	content: "";
+	position: absolute;
+	top: -1.75rem; 		/* The height of the up-arrow will stop from the menu or sub-menu during anim */
+	left: 3rem;
+	border: 0.8rem solid transparent;
+	border-bottom-color: #eb3007;
+	transition: none;
+}
+
+
+.nav-list li:hover > .sub-menu {
+	top: 2.50rem;
+	opacity: 1;
+	visibility: visible;
+	padding-right: 1rem;
+}
+
+.nav-list li:hover > .sub-menu2 {
+	top: 11.5rem;			/* Position of the sub-menu box*/
+	opacity: 1;
+	visibility: visible;
+	padding-right: 1rem;
+}
+
+.right-arrow {
+	float: right;
+}
+
+/* End of sub-menus for partnership */
+
+.tsp-title .slns-title .nju-link .trust-fund {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: larger;
+}
+
+.ldn-brief-bio {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+}
+
+
+footer {
+	font-family: "Roboto", sans-serif;
+	background: #535050; /*#251616;*/
+}
+
+.my-links {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding-left: 40px;
+	border-right: #636060 /*#332b2a*/ solid 2px;
+}
+
+.my-services {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	border-right: #636060 solid 2px;
+	padding-left: 1.5rem;
+}
+
+.my-address {
+	display: flex;
+	flex-direction: column;
+	align-items:flex-start;
+}
+
+.bottom-links a, .mip-contact a {
+	color: #e0e0d6;
+	text-decoration: none;
+}
+
+.mip-contact i {
+	font-size: 14px;
+	color: #047aed;
+}
+
+.contact-link a {
+	color: #fbfbf7;
+	text-decoration: none;
+	font-style: oblique;
+	font-weight: bold;
+}
+
+.copyrights {
+	display: flex;
+	flex-direction: column;
+	/* background-color: #8e8e94; #3d4042; */
+	align-items: center;
+	justify-content: center;
+	font-family: 'Courgette', cursive;
+	font-size: 10px;
+	width: 100%;
+	border-top: 1px solid #535050;
+	margin-bottom: 0;
+	background: #535050;
+}
+
+.company {
+	font-family: 'Courgette', cursive;
+	font-size: 10px;
+}
+
+.developer {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 8px;
+}
+
+.heading-3 {
+	padding-bottom: 12px;
+	justify-content: flex-start;
+	font-family: 'Calligraffitti', cursive;
+	font-size: 18px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.bottom-links {
+	padding-top: 8px;
+}
+
+/* Start of social media links */
+.social-link, .location-icon {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer
+}
+
+.social-link:hover {
+    background-color: #0d6efd;
+    border-color: #f2f3f5;
+	border: 3px solid;
+}
+
+/* Location icon for the HQ*/
+.location-icon {
+    height: 48px;
+    width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	background-color: blueviolet;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    cursor: pointer
+}
+
+.loc-img {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/* End of social media links */
+
+/* Start of home page styles*/
+.research-txt, .graph-title, .mip-slns,
+.lead-inventor, .title-hq {
+	font-family: 'Merienda One', cursive;     /* 'Trocchi', serif; */
+	text-transform: uppercase;
+}
+/* End of home page styles*/
+
+.nav-link i {
+	color:#f0d019
+}
+
+.fa {
+	text-decoration-color: #fbfbf7;
+	color:#2230eb;
+	border-radius: 50%;
+}
+
+/* Start of CSS for the MIP-Team */
+.member-photo {
+	border-radius: 6px;
+}
+
+.team-heading {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+/* End of CSS for the MIP-Team */
+
+
+/* Start of CSS for the MIP-Partner */
+.partner-form {
+	display: flex;
+	flex-flow: column;
+	margin-top: 80px;
+	padding-top: 20px;
+	border: 4px solid #535050;
+	border-radius: 6px;
+}
+/* End of CSS for the MIP-Partner */
+
+/* Start of CSS for Donor Form */
+.card {
+    border: none;
+    padding: 20px;
+	margin-top: 30px;
+    background-color: #7b1d88;
+    color: #fff
+}
+
+.card-title, .select-title {
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-style: italic;
+}
+
+
+.form-input {
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px
+}
+
+.form-input i {
+    position: absolute;
+    font-size: 18px;
+    top: 15px;
+    left: 10px
+}
+
+.input-field {
+	width: 100%;
+    height: 50px;
+    background-color: #e6e9ee;
+    text-indent: 40px;
+    font-size: 15px;
+	font-family:'Times New Roman', Times, serif
+}
+
+.input-field:focus {
+    background-color: #47858d;
+    box-shadow: none;
+    color: #fff;
+    border-color: #4f63e7
+}
+
+.register-donor, 
+.create-partner {
+	margin-top: 24px;
+	background-color: #534a4a;
+}
+/* For testing only */
+.pledge-title {
+	font-family:Georgia, 'Times New Roman', Times, serif;
+	font-style: italic;
+	color: #ae19c2;
+}
+
+/* .form-input i {
+    position: absolute;
+}
+
+.form-input {
+	width: 50%;
+	margin-bottom: 10px;
+}
+
+.icon {
+	padding: 10px;
+	min-width: 50px;
+}
+
+.input-field {
+	width: 100%;
+	padding: 10px;
+	text-indent: 20px;
+} */
+
+/* End of CSS for Donor Form */
+
+/* Start of CSS for Donor Details Form */
+.donor-detail {
+	background-color: #5a0d68f6;
+}
+
+.donor-header {
+	display: flex;
+	flex-direction: column;
+	background-color: #3a3636;
+	width: 100%;
+}
+
+.h2-txt {
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	text-transform: uppercase;
+	text-decoration: underline;
+}
+/* End of CSS for Donor Details Form */
