@@ -21,13 +21,14 @@ class DonorIndexView(LoginRequiredMixin, ListView):
     context_object_name = 'donors'
     model = Donor
     template_name = 'donor/donors_list.html'
+    login_url = 'admin/'
 
     def get_queryset(self):
         return Donor.objects.all()
 
     def test_func(self):
         if not self.request.user.is_superuser:
-            return redirect('admin/')
+            return reverse_lazy('login_url')
 
         return redirect('mip-home')
 
@@ -36,10 +37,10 @@ class DonorDetailView(LoginRequiredMixin, DetailView):
     context_object_name = 'donor'
     model = Donor
     template_name = 'donor/donor_detail.html'
-    login_url = 'admin/login'
+    login_url = 'admin/'
 
     def test_func(self):
         if not self.request.user.is_superuser:
-            return redirect('admin/')
+            return reverse_lazy('login_url')
 
         return redirect('mip-home')

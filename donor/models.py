@@ -28,11 +28,11 @@ class Donor(models.Model):
     pledge_amount = models.FloatField(blank=False)
     pledge_date = models.DateField(auto_now_add=True)
     pledge_status = models.CharField(max_length=64, choices=PledgeStatus.choices, default=PledgeStatus.NOT_HONOURED)
-    received_amount = models.FloatField(default=0.0, editable=True)
+    received_amount = models.FloatField(default=0.0)
     receipt_date = models.DateTimeField(default=add_time(3))
 
     def __str__(self) -> str:
-        return self.name + ' - ' + self.donor_type.value
+        return self.name
 
     def is_individiual_donor(self):
         return self.donor_type == DonorType.INDIVIDUAL

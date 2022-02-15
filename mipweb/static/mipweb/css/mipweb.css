@@ -76,11 +76,10 @@ a:hover, a:visited, a:link, a:active
 	display: flex;
 	width: auto;
 	align-items: stretch;
-	/* padding-left: 5rem; */
 }
 
 .nav-list .fa {
-	margin-right: 2px;    
+	margin-right: 2px;
 	color: white !important;
 }
 

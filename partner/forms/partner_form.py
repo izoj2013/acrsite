@@ -37,7 +37,7 @@ class PartnerForm(ModelForm):
     def helper(self):
         helper = FormHelper(self)
         helper.layout = Layout(
-            HTML('<h4 class="partner-data mx-auto mt-4 text-center" style="font-family: Times, serif; font-style:italic; color: #2da0f7;"><strong>Partnership Request</strong></h4>'),
+            HTML('<h4 class="partner-data mx-auto mt-4 text-center" style="font-family: Times, serif; font-style:italic; color: #D6580F;"><strong>Partnership Request</strong></h4>'),
             HTML('<hr class="col-md-6 offset-md-3" style="border-top: 0px;">'),
         )
         for field in self.Meta.fields:
