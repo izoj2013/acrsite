@@ -42,6 +42,10 @@ a:hover, a:visited, a:link, a:active
 	text-decoration: none !important;
 }
 
+.nav-item {
+	padding-left: 1px;				/* Added 14.02.2022 */
+}
+
 .nav-item a {
 	color: #fffede;
 	font-size: 12px;
@@ -58,9 +62,9 @@ a:hover, a:visited, a:link, a:active
 	border-bottom: 3px solid #ec1710;
 	filter: blur(0);
 	font-family: 'Roboto slab', serif;
-	font-size: 14px;
+	font-size: 12px;					/* was 14px */
 	font-weight: bolder;
-	transition: all 0.3s ease, 0s;
+	transition: all 0.3s ease-in, 0s;   /* was ease */
 }
 
 .nav-item a > i:hover {
@@ -76,12 +80,12 @@ a:hover, a:visited, a:link, a:active
 }
 
 .nav-list .fa {
-	margin-right: 6px;
+	margin-right: 2px;    
 	color: white !important;
 }
 
 .nav-list > li {
-	/* line-height: 4rem; */
+	line-height: 2rem;
 	position: relative;
 }
 
@@ -106,20 +110,40 @@ a:hover, a:visited, a:link, a:active
 	border-radius: 2px;
 }
 
-.sub-menu li {
-	line-height: 3rem;
+.sub-menu li, .sub-menu2 li {
+	line-height: 3rem;     /* The height of the drop-down menu 2b animated */
+	/* word-wrap: break-word; //Added: 14.02.2022 */ 
+	/* max-width: 125px; */
 }
 
 .sub-menu {
 	display: block;
-	width: 16rem;
+	width: fit-content; /* 20rem;*/
 	position: absolute;
 	border-top: 2px solid #eb3007;
 	border-radius: 2px;
 	background-color: #191919;
 	z-index: 10;
-	/* top: 10rem; */
-	opacity: 0;
+	top: 15rem;  /* How far the sub-menu box will start its animation from => FIXED 09.02.2022*/
+	opacity: 0.25;
+	visibility: hidden;
+	-webkit-transition: all 650ms ease;
+	-moz-transition: all 650ms ease;
+	-ms-transition: color 650ms;
+	-o-transition: all 650ms ease;
+	transition: all 650ms ease;
+}
+
+.sub-menu2 {
+	display: block;
+	width: fit-content; /* 20rem;*/
+	position: absolute;
+	border-top: 2px solid #eb3007;
+	border-radius: 2px;
+	background-color: #191919;
+	z-index: 10;
+	top: 12.25rem;  /* How far the sub-menu box will start its animation from => FIXED 09.02.2022*/
+	opacity: 0.25;
 	visibility: hidden;
 	-webkit-transition: all 650ms ease;
 	-moz-transition: all 650ms ease;
@@ -131,7 +155,17 @@ a:hover, a:visited, a:link, a:active
 .sub-menu::before {
 	content: "";
 	position: absolute;
-	top: -1.6rem;
+	top: -1.75rem; 		/* The height of the up-arrow will stop from the menu or sub-menu during anim */
+	left: 3rem;
+	border: 0.8rem solid transparent;
+	border-bottom-color: #eb3007;
+	transition: none;
+}
+
+.sub-menu2::before {
+	content: "";
+	position: absolute;
+	top: -1.75rem; 		/* The height of the up-arrow will stop from the menu or sub-menu during anim */
 	left: 3rem;
 	border: 0.8rem solid transparent;
 	border-bottom-color: #eb3007;
@@ -140,9 +174,17 @@ a:hover, a:visited, a:link, a:active
 
 
 .nav-list li:hover > .sub-menu {
-	top: 2.5rem;
+	top: 2.50rem;
 	opacity: 1;
 	visibility: visible;
+	padding-right: 1rem;
+}
+
+.nav-list li:hover > .sub-menu2 {
+	top: 11.5rem;			/* Position of the sub-menu box*/
+	opacity: 1;
+	visibility: visible;
+	padding-right: 1rem;
 }
 
 .right-arrow {
@@ -370,7 +412,8 @@ footer {
     border-color: #4f63e7
 }
 
-.register-donor {
+.register-donor, 
+.create-partner {
 	margin-top: 24px;
 	background-color: #534a4a;
 }

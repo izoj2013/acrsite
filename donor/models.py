@@ -1,11 +1,11 @@
 from email.policy import default
 from enum import unique
-from strenum import StrEnum
 from django.db import models
 from django.urls import reverse
 from django.db.models.deletion import CASCADE
 from django.db.models.fields import EmailField
 from django.utils.translation import gettext_lazy as _
+from mipweb.utils import add_time
 
 # Create your models here.
 
@@ -29,7 +29,7 @@ class Donor(models.Model):
     pledge_date = models.DateField(auto_now_add=True)
     pledge_status = models.CharField(max_length=64, choices=PledgeStatus.choices, default=PledgeStatus.NOT_HONOURED)
     received_amount = models.FloatField(default=0.0, editable=True)
-    receipt_date = models.DateTimeField(editable=True)
+    receipt_date = models.DateTimeField(default=add_time(3))
 
     def __str__(self) -> str:
         return self.name + ' - ' + self.donor_type.value

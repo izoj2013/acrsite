@@ -4,11 +4,17 @@
 {% block meta_description %}LDN Discoveries on [NP≠P] {% endblock %}
 {% block title %} ACS-ERC, Making Impossible Possible: Research Breakthrough on [NP≠P] {% endblock %}
 {% block content %}
-    <div class="container-fluid text-white text-center mt-5 pt-3 border border-4 border-info">
-        <!-- <p>Katex tit-bits
-            $$ \iint f(x, y)dxdy $$
-            $$ v \ne z $$
-        </p> -->
+    <div class="container-fluid text-white text-center mt-5 pt-0 border border-4 border-info">
+        {% if messages %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {% for msg in messages %}
+                <div><strong>{{ msg }}</strong></div>
+            {% endfor %}
+        </div>
+        {% endif %}
         <div class="row tsp-title fw-bold text-center pt-4 border border-2 border-warning rouded-pill">
             <h1 class="research-txt p-2">Research Breakthrough</h1>
             <h2>

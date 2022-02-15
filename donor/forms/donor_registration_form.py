@@ -2,6 +2,7 @@ from django.forms import ModelForm
 from django import forms
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Div, Layout, Field, HTML, Submit
+from mipweb.utils import is_valid_string, is_valid_email
 
 from donor.models import *
 
@@ -15,7 +16,7 @@ class DonorRegistrationForm(ModelForm):
 
     email = forms.EmailField(required=True, widget=forms.EmailInput(attrs={
         "class": "input",
-        "type": "text",
+        "type": "email",
         "placeholder": "Type Email Address"
     }), label='Email')
 
@@ -44,35 +45,39 @@ class DonorRegistrationForm(ModelForm):
            )
         helper.layout.append(
             Div(
-                Submit('submit', 'Submit Pledge', style="font-family: Georgia, Times, serif; font-weight: bold;", css_class='btn-success rounded-pill col-md-6 offset-md-3 mb-2'),
-            ))
+                Div(css_class='col-md-4'),
+                Div(Submit('submit', 'Submit Pledge', style="font-family: Georgia, Times, serif; font-weight: bold;", css_class='btn btn-primary rounded-pill col-md-6 offset-md-3 col-sm-2 offset-sm-5 mb-3'),)
+            )
+        )
         helper.field_class = 'col-md-9'
         helper.label_class = 'col-md-3'
         return helper
 
+
     def clean_name(self):
         donor_name = self.cleaned_data.get('name')
 
-        if len(donor_name) < 2:
-            raise forms.ValidationError("Your name is too short")
+        if is_valid_string(donor_name):
+            if len(donor_name) < 2:
+                raise forms.ValidationError("Your name is too short")
 
         return donor_name
+
 
     def clean_email(self):
         email_addr = self.cleaned_data.get('email')
 
-        with open("acrsite/disposable_email_providers.txt", 'r') as f:
-            blacklist = f.read().splitlines()
+        if is_valid_email(email_addr):
+            return email_addr
 
-        for disposable_email in blacklist:
-            if disposable_email in email_addr:
-                raise forms.ValidationError("Your email address %s may not be legit" %disposable_email)
-        return email_addr
+        raise forms.ValidationError("Invalid email address")
+
 
     def clean_organisation_name(self):
         org_name = self.cleaned_data.get('organisation_name')
 
-        if len(org_name) < 2:
-            raise forms.ValidationError("Your organisation's name is too short")
+        if is_valid_string(org_name):
+            if len(org_name) < 2:
+                raise forms.ValidationError("Your organisation's name is too short")
 
         return org_name

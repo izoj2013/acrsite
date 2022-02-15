@@ -1,9 +1,9 @@
 {% load static %}
 
 <nav class="navbar navbar-expand-sm navbar-dark bg-primary py-0 mb-4 fixed-top text-white">
-    <div class="container-fluid">
+    <div class="container-fluid ">
         <a href="{% url 'mip-home' %}" class="brand-logo text-white">
-            <img class="img-fluid logo-banner m-2" width="84" height="28" src="{% static 'mipweb/logos/acserc_georgia_ad05.svg' %}" alt="Website-Logo">
+            <img class="img-fluid logo-banner px-2 m-1" width="84" height="28" src="{% static 'mipweb/logos/acserc_georgia_ad05.svg' %}" alt="Website-Logo">
         </a>
         <button class="navbar-toggler"
             type="button"
@@ -15,8 +15,8 @@
         >
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navmenuTop">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 flex-nowrap nav-list">
+        <div class="collapse navbar-collapse" id="navmenuTop px-6">
+            <ul class="navbar-nav px-0 mb-lg-0 flex-nowrap nav-list">
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{% url 'mip-home' %}"><i class="fa fa-home px-1"></i>Home</a>
                 </li>
@@ -27,22 +27,39 @@
                     <a class="nav-link" href="{% url 'mip-team' %}"><i class="fa fa-users px-1"></i>Our Team</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#cs-ip"><i class="fa fa-laptop px-1"></i>Computer Science Impossible Jump</a>
+                    <a class="nav-link flex-wrap" href="#cs-ip"><i class="fa fa-laptop px-1"></i>CompSci. Impossible Jump</a>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-handshake-o px-1"></i>Partner With Us</a>
-                    <ul class="sub-menu">
-                        <li><a href="#"><i class="fa fa-gg-circle" aria-hidden="true"></i>Collaborate with us</a></li>
-                        <li><a href="{% url 'mip-donor' %}"><i class="fa fa-credit-card" aria-hidden="true"></i>Donate to our Research</a></li>
-                        <li><a href="#"><i class="fa fa-wrench" aria-hidden="true"></i>Hire our Services</a></li>
-                        <li><a href="#"><i class="fa fa-table" aria-hidden="true"></i>Request for a Demo</a></li>
-                        <li><a href="#"><i class="fa fa-compass" aria-hidden="true"></i>Make a Follow Up</a></li>
+                    <ul class="sub-menu mt-2">
+                        <li><a href="{% url 'mip-partner' %}"><i class="fa fa-gg-circle px-1" aria-hidden="true"></i>Collaborate with us</a></li>
+                        <li><a href="{% url 'mip-donor' %}"><i class="fa fa-credit-card px-1" aria-hidden="true"></i>Donate to our Research</a></li>
+                        <li><a href="{% url 'mip-partner' %}"><i class="fa fa-wrench px-1" aria-hidden="true"></i>Hire our Services</a></li>
+                        <li><a href="{% url 'mip-partner' %}"><i class="fa fa-table px-1" aria-hidden="true"></i>Request for a Demo</a></li>
+                        <li><a href="#"><i class="fa fa-compass px-1" aria-hidden="true"></i>Make a Follow Up</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-folder px-1"></i>IEC Standards</a>
+                    <ul class="sub-menu mt-2">
+                        <li><a href="#"><i class="fa fa-folder-open px-1" aria-hidden="true"></i>IEC Standards Conformity</a></li>
+                        <li><a href="#"><i class="fa fa-folder-open-o px-1" aria-hidden="true"></i>ACFTA IEC Standards Ecosystem</a></li>
+                        <li><a href="#"><i class="fa fa-th px-1" aria-hidden="true"></i>SmartGrid Systems</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-heartbeat px-1"></i>LifeLinesNets & Disaster Protection</a>
+                    <ul class="sub-menu mt-2">
+                        <li><a href="#"><i class="fa fa-medkit px-1" aria-hidden="true"></i>ILLIE - Disaster Protection</a></li>
+                        <li><a href="#"><i class="fa fa-align-center px-1" aria-hidden="true"></i>LifeLinesNets Emergency States</a></li>
+                        <li><a href="#"><i class="fa fa-table px-1" aria-hidden="true"></i>LifeLinesNets Topological Reliability</a></li>
+                        <li><a href="#"><i class="fa fa-snowflake-o px-1" aria-hidden="true"></i>LifeLinesNets Critical Infrastructure<i class="icon ion-md-arrow-dropright right-arrow"></i></a>
+                            <ul class="sub-menu2 mt-2">
+                                <li><a href="#"><i class="fa fa-cube px-1" aria-hidden="true"></i>Critical Power Systems</a></li>
+                                <li><a href="#"><i class="fa fa-cubes px-1" aria-hidden="true"></i>Critical Financial Systems</a></li>
+                                <li><a href="#"><i class="fa fa-database px-1" aria-hidden="true"></i>Critical National Databases</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success text-white" type="submit">Search</button>
-            </form>
         </div>
         <div class="header bottom-navbar">
             <nav></nav>

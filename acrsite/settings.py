@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'django_extensions',
+    'post_office',
 ]
 
 # Django Crispy Forms w/ Bootstrap5
@@ -156,3 +157,6 @@ MEDIA_URL = '/files/'
 
 # Django-MySql
 DJANGO_MYSQL_REWRITE_QUERIES = True
+
+# API for EMAIL_BACKEND
+EMAIL_BACKEND = 'post_office.EmailBackend'

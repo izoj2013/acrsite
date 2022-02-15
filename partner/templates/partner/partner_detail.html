@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block meta_description %}LDN Discoveries on [NP≠P] {% endblock %}
+{% block title %} ACS-ERC: Partner Details {% endblock %}
+
+{% block content %}
+    <div class="container mt-5 p-5">
+        <div class="col-md-6 mx-auto text-white border boder-4 rounded donor-detail mt-2 mb-2 pt-2 pb-2">
+            <div class="col-md-12 text-center">
+                <h5 class="detail-title mx-2"><b><i>Details for Partner No {{ donor.pk }}</i></b></h4>
+                <hr class="col-md-8 offset-md-2" style="border-top: 0px">
+            </div>
+            <section class="details mx-2">
+                <section class="row">
+                    <div class="col-md-5">
+                        <strong>Partner's Orgnanisation:</strong>
+                    </div>
+                    <div class="col-md-7">
+                        {{ partner.organisation_name }}
+                    </div>
+                </section>
+                <section class="row">
+                    <div class="col-md-5">
+                        <strong>Corporate Email:</strong>
+                    </div>
+                    <div class="col-md-7">
+                        {{ partner.contact_email }}
+                    </div>
+                </section>
+                <section class="row">
+                    <div class="col-md-5">
+                        <strong>Partnership Type:</strong>
+                    </div>
+                    <div class="col-md-7">
+                        {{ partner.partnership_type }}
+                    </div>
+                </section>
+                <section class="row">
+                    <div class="col-md-5">
+                        <strong>Partnership Description:</strong>
+                    </div>
+                    <div class="col-md-7">
+                        {{ partner.description }}
+                    </div>
+                </section>
+            </section>
+        </div>
+    </div>
+
+{% endblock %}

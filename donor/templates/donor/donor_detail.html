@@ -7,17 +7,6 @@
 
 {% block content %}
     <div class="container mt-5 p-5">
-        {% if messages %}
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            {% for msg in messages %}
-                <div><strong>{{ msg }}</strong></div>
-            {% endfor %}
-        </div>
-        {% endif %}
-
         <div class="col-md-6 mx-auto text-white border boder-4 rounded donor-detail mt-2 mb-2 pt-2 pb-2">
             <div class="col-md-12 text-center">
                 <h5 class="detail-title mx-2"><b><i>Donor No {{ donor.pk }} towards our Research Trust Fund</i></b></h4>

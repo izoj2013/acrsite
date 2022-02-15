@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block meta_description %}LDN Discoveries on [NP≠P] {% endblock %}
+{% block title %} ACS-ERC: List of our Partners {% endblock %}
+
+{% block content %}
+    <div class="container m-5 p-5 partners">
+        <div class="col-md-12 text-center text-white d-flex mt-2 mb-2 px-2">
+            <h2 class="col-md-8 offset-md-2 mb-2 pb-0 h2-text">
+                List of ACS-ERC Partners
+            </h2>
+            {% for partner in partners %}
+            <table class="table table-secondary table-bordered border-primary">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Organisation's Name</th>
+                        <th scope="col">Contact Person's Name</th>
+                        <th scope="col">Partnership Type</th>
+                        <th scope="col">Partnership Description</th>
+                        <th scope="col">Project Name</th>
+                        <th scope="col">Project State</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">{{ partner.pk }}</th>
+                        <tr>{{ partner.organisation_name }}</tr>
+                        <tr>{{ partner.contact_email }}</tr>
+                        <tr>{{ partner.partnership_type }}</tr>
+                        <tr>{{ partner.description }}</tr>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
