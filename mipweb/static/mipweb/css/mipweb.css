@@ -42,6 +42,10 @@ a:hover, a:visited, a:link, a:active
 	text-decoration: none !important;
 }
 
+.mip-menu {
+	padding-left: 6rem;
+}
+
 .nav-item {
 	padding-left: 1px;				/* Added 14.02.2022 */
 }
@@ -205,7 +209,7 @@ a:hover, a:visited, a:link, a:active
 
 footer {
 	font-family: "Roboto", sans-serif;
-	background: #535050; /*#251616;*/
+	background: #65516e; /*#251616; #686666*/
 }
 
 .my-links {
@@ -258,7 +262,7 @@ footer {
 	width: 100%;
 	border-top: 1px solid #535050;
 	margin-bottom: 0;
-	background: #535050;
+	/* background: #535050; */
 }
 
 .company {
