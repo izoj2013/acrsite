@@ -1,19 +1,41 @@
-asgiref==3.2.10
-bleach==4.1.0
-certifi==2020.6.20
-crispy-bootstrap5==0.6
-Django @ file:///tmp/build/80754af9/django_1601563330930/work
-django-crispy-forms==1.13.0
-django-extensions==3.1.3
-django-mysql==4.2.0
-jsonfield==3.1.0
-packaging==21.3
-psycopg2 @ file:///tmp/build/80754af9/psycopg2_1594305108220/work
-PyMySQL==1.0.2
-pyparsing==3.0.7
-python-dateutil==2.8.2
-pytz==2020.1
-six==1.16.0
-sqlparse @ file:///tmp/build/80754af9/sqlparse_1602184451250/work
-StrEnum==0.4.7
-webencodings==0.5.1
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+# platform: linux-64
+asgiref=3.2.10=pypi_0
+bleach=4.1.0=pypi_0
+ca-certificates=2020.10.14=0
+certifi=2020.6.20=py38_0
+crispy-bootstrap5=0.6=pypi_0
+django=3.1.2=py_0
+django-crispy-forms=1.13.0=pypi_0
+django-extensions=3.1.3=pypi_0
+django-mysql=4.2.0=pypi_0
+jsonfield=3.1.0=pypi_0
+krb5=1.17.1=h173b8e3_0
+ld_impl_linux-64=2.33.1=h53a641e_7
+libedit=3.1.20191231=h14c3975_1
+libffi=3.3=he6710b0_2
+libgcc-ng=9.1.0=hdf63c60_0
+libpq=12.2=h20c2e04_0
+libstdcxx-ng=9.1.0=hdf63c60_0
+ncurses=6.2=he6710b0_1
+openssl=1.1.1h=h7b6447c_0
+packaging=21.3=pypi_0
+pip=20.2.4=py38_0
+psycopg2=2.8.5=py38h1ba5d50_0
+pymysql=1.0.2=pypi_0
+pyparsing=3.0.7=pypi_0
+python=3.8.5=h7579374_1
+python-dateutil=2.8.2=pypi_0
+pytz=2020.1=py_0
+readline=8.0=h7b6447c_0
+setuptools=50.3.0=py38hb0f4dca_1
+six=1.16.0=pypi_0
+sqlite=3.33.0=h62c20be_0
+sqlparse=0.4.1=py_0
+strenum=0.4.7=pypi_0
+tk=8.6.10=hbc83047_0
+webencodings=0.5.1=pypi_0
+wheel=0.35.1=py_0
+xz=5.2.5=h7b6447c_0
+zlib=1.2.11=h7b6447c_3
